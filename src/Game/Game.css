@@ -1,8 +1,0 @@
-.Game {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-shadow: 0 0 30px var(--gameO);
-}
