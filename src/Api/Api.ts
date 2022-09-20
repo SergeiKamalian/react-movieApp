@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IGenres, IImages, IPopular } from "../module";
+import { IAllDataMovie, IGenres, IImages, IPopular } from "../module";
 const API_KEY = '01c50a68276df607f527c283c2a54062';
 
 const api = axios.create({
@@ -15,7 +15,7 @@ export const getGenresList = (): Promise<IGenres[]> => api.get(`https://api.them
 export const getMoviesByName = (name: string): Promise<IPopular[]> => api.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${name}`)
     .then((res) => res.data.results)
 
-export const getMovieById = (id: number) => api.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
+export const getMovieById = (id: number): Promise<IAllDataMovie> => api.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
 .then((res) => res.data)
 
 export const getImagesById = (id: number): Promise<IImages[]> => api.get(`https://api.themoviedb.org/3/movie/${id}/images?api_key=${API_KEY}&language=ru-RU&include_image_language=ru,null`)

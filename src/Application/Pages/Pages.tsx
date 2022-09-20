@@ -6,10 +6,10 @@ import { getGenres } from "../../Functions/Functions";
 
 const Pages: FC<IPagesProps> = ({ setLoader }) => {
     const [menuItems, setMenuItems] = useState<IMenuItem[]>([
-        { title: 'Pupular movies', value: 'popular', active: false },
-        { title: 'Now playing', value: 'now_playing', active: false },
-        { title: 'Top rated', value: 'top_rated', active: false },
-        { title: 'Upcoming movies', value: 'upcoming', active: false }
+        { title: 'POPULAR MOVIES', value: 'popular', active: false },
+        { title: 'NOW PLAYING', value: 'now_playing', active: false },
+        { title: 'TOP RATED', value: 'top_rated', active: false },
+        { title: 'UPCOMING MOVIES', value: 'upcoming', active: false }
     ])
 
     useEffect(() => {

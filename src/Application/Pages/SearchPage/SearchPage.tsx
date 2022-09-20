@@ -18,6 +18,7 @@ const SearchPage: FC<ISearchPageProps> = ({ }) => {
         }
     }, [params.value])
 
+
     const genres = JSON.parse(localStorage.getItem('genres')!)
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const SearchPage: FC<ISearchPageProps> = ({ }) => {
 
     return (
         <div className="SearchPage">
-            <h1>Search by request: {params.value}</h1>
+            <h1>SEARCH BY REQUEST: <span>{params.value?.toUpperCase()}</span></h1>
             <div className="searchPageList">
                 {searchData.length 
                 ? searchData.map((searchItem) => <MovieItem movie={searchItem} genres={genres} />) 
