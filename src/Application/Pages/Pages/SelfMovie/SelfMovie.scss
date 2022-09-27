@@ -1,0 +1,228 @@
+.SelfMovie {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    >.aboutMovie {
+        width: 100%;
+        height: 430px;
+        display: flex;
+        flex-direction: row;
+        transition: all 1s;
+        animation-duration: 1s;
+        animation-name: topageImg;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+
+        >.movieCover {
+            width: 280px;
+            height: 430px;
+            // border: 1px solid red;
+            background-size: cover;
+        }
+
+        >.infoMovie {
+            width: calc(100% - 280px);
+            height: 100%;
+            background-color: rgba(0, 0, 0, .6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+
+            >.infoTop {
+                width: 100%;
+                height: 80%;
+                padding: 10px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                >.titleAndRating {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 60px;
+
+                    h1 {
+                        color: #f7b016;
+                    }
+
+                    >.rating {
+                        width: 50px;
+                        height: 50px;
+                        background: #1d2024;
+                        border-radius: 50%;
+                        border: 1px solid #323238;
+                        display: flex;
+                        color: #f7b016;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: bold;
+                    }
+                }
+
+                >.tagline {
+                    color: white;
+                    position: relative;
+                    bottom: 15px;
+                }
+
+                >.aboutText {
+                    color: white;
+                    font-size: 14px;
+                }
+
+                >.langs {
+                    width: 100%;
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 15px;
+
+                    >.title {
+                        color: white;
+                    }
+
+                    .list {
+                        color: #f7b016;
+                        font-weight: bold;
+                    }
+                }
+
+                >.genres {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 15px;
+                    margin-top: 10px;
+
+                    >.title {
+                        color: white;
+                    }
+
+                    >.list {
+                        color: #f7b016;
+                        font-weight: bold;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+
+                        >div {
+                            padding: 0 5px;
+                            background: #f7b016;
+                            border-radius: 5px;
+                            color: black;
+                        }
+                    }
+                }
+
+                >button {
+                    border: none;
+                    outline: none;
+                    background: #00b327;
+                    width: 180px;
+                    color: white;
+                    height: 40px;
+                    border-radius: 10px;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 15px;
+                    cursor: pointer;
+                }
+
+                >.productCompany {
+                    width: 100%;
+                    border: 1px solid white;
+                    display: flex;
+                    flex-direction: column;
+
+                    >span {
+                        color: white;
+                        font-size: 20px;
+                    }
+
+                    >.company {
+                        width: 200px;
+                        height: 60px;
+                        border: 1px solid red;
+
+                        >.logo {
+                            width: 300px;
+                            height: 60px;
+                            background-size: auto;
+                            background-position: center;
+                            // border-radius: 50%;
+                            border-radius: 1px solid;
+                            border: 1px solid #f7b016;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, .9);
+                        }
+                    }
+                }
+            }
+
+            >.infoBottom {
+                width: 100%;
+                height: 55px;
+                background-color: rgba(0, 0, 0, .7);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 15px;
+                >.info {
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    >.icon {
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        color: white;
+                        font-size: 25px;
+                    }
+                    >span {
+                        color: white;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes topageImg {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    50% {
+        opacity: .2;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes movieCover {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
