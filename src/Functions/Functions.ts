@@ -1,4 +1,4 @@
-import { IGenres } from "../model";
+import { IGenres, IMenuNavigateItems } from "../model";
 import { getGenresList } from "../Api/Api";
 
 export const sprintData = (activeGenres: number[], allGenres: IGenres[]) => {

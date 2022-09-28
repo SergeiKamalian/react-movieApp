@@ -1,6 +1,6 @@
 import { IMenuNavigateItems, IPopular } from "../../../model";
 import { ISearchPageReducer } from "../../../model";
-import { SEARCH_DATA } from "./searchPageTypes";
+import { SEARCH_DATA, SET_LINK } from "./searchPageTypes";
 
 const menuNavigateItems: IMenuNavigateItems[] = [
   { title: "POPULAR MOVIES", value: "popular", active: false },
@@ -12,17 +12,23 @@ const menuNavigateItems: IMenuNavigateItems[] = [
 const INITIAL_STATE: ISearchPageReducer = {
   movies: [],
   menuNavigateItems,
+  activeLink: ''
 };
 
 const searchPageRouter = (
   state = INITIAL_STATE,
-  action: { type: string; payload: number | IPopular[] }
+  action: { type: string; payload: IPopular[] | string }
 ): ISearchPageReducer => {
   switch (action.type) {
     case SEARCH_DATA:
       return {
         ...state,
         movies: action.payload as IPopular[],
+      };
+    case SET_LINK:
+      return {
+        ...state,
+        activeLink: action.payload as string,
       };
     default:
       return state;

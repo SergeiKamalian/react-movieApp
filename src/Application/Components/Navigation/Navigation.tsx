@@ -33,7 +33,7 @@ const Navigation = () => {
                     <button onClick={searchByName}><BiSearchAlt2 /></button>
                 </div>
                 <div className="btnAndLinkedin">
-                    <button className="linkedin"><ImLinkedin2 /></button>
+                    <a className="linkedin" href='https://www.linkedin.com/in/sergey-kamalyan-37579524a/' ><ImLinkedin2 /></a>
                     <button className='signin'><RiUserSharedLine /> </button>
                 </div>
             </div>

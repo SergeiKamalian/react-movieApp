@@ -40,9 +40,7 @@ const SelfMovie = ({ setImgFon }: { setImgFon: React.Dispatch<React.SetStateActi
     const movieId = Number(params.id)
 
     useEffect(() => {
-
         console.log('selfmovie');
-        
     }, [])
 
     const getAllInfo = useCallback(async () => {
@@ -61,7 +59,6 @@ const SelfMovie = ({ setImgFon }: { setImgFon: React.Dispatch<React.SetStateActi
     }, [])
 
     const createLangs = () => {
-        // console.log(movieData.spoken_languages);
         let string: string = '';
         movieData.spoken_languages?.map((item) => {
             string = string.concat(`${item.english_name}, `)
@@ -96,18 +93,6 @@ const SelfMovie = ({ setImgFon }: { setImgFon: React.Dispatch<React.SetStateActi
                             <div className="rating">{movieData.vote_average} </div>
                         </div>
                         <span className="tagline">{movieData.tagline} </span>
-                        {/* <div className="productCompany">
-                            <span>Companies: </span>
-                            {movieData.production_companies?.some((item) => item.logo_path) ? 
-                            <>
-                               {movieData.production_companies
-                               .filter((company) => company.logo_path)
-                               .map((comp) => <div className="company" key={comp.id}>
-                                    
-                               </div> )} 
-                            </> : '' 
-                        }
-                        </div> */}
                         <span className="aboutText">{movieData.overview}</span>
                         <div className="langs">
                             <div className="title">Spoken Languages:</div> <span className="list">{createLangs()}</span>

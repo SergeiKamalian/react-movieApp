@@ -5,12 +5,12 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import { getGenresList } from "../Api/Api";
 import SelfMovie from "./Pages/Pages/SelfMovie/SelfMovie";
-const Applicaton = ({setImgFon,}: {setImgFon: React.Dispatch<React.SetStateAction<string>>;}) => {
+import Page from "./Pages/Pages/Page/Page";
+import Footer from "./Components/Footer/Footer";
+import Authorization from "./Components/Authorization/Authorization";
+const Applicaton = ({ setImgFon, }: { setImgFon: React.Dispatch<React.SetStateAction<string>>; }) => {
   const navigate = useNavigate();
 
-//   useEffect(() => {
-//     navigate("popular");
-//   }, [navigate]);
   const getGenres = useCallback(async () => {
     try {
       const genresList = await getGenresList();
@@ -30,7 +30,10 @@ const Applicaton = ({setImgFon,}: {setImgFon: React.Dispatch<React.SetStateActio
           path="movies/:id"
           element={<SelfMovie setImgFon={setImgFon} />}
         />
+        <Route path=":value" element={<Page />} />
+        <Route path="authorization" element={<Authorization />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

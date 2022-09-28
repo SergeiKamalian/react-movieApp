@@ -101,6 +101,7 @@ export interface IMenuNavigateItems {
 export interface ISearchPageReducer {
   movies: IPopular[];
   menuNavigateItems: IMenuNavigateItems[];
+  activeLink: string
 }
 export interface ISearchPageAction {
   type: number;
